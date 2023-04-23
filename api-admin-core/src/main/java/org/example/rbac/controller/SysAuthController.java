@@ -6,13 +6,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import org.example.common.utils.Result;
 import org.example.rbac.service.SysAuthService;
+import org.example.rbac.service.SysCaptchaService;
 import org.example.rbac.vo.SysAccountLoginVO;
+import org.example.rbac.vo.SysCaptchaVO;
 import org.example.rbac.vo.SysTokenVO;
 import org.example.security.utils.TokenUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -26,6 +25,15 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class SysAuthController {
     private final SysAuthService sysAuthService;
+    private final SysCaptchaService sysCaptchaService;
+
+    @GetMapping("captcha")
+    @Operation(summary = "验证码")
+    public Result<SysCaptchaVO> captcha() {
+        SysCaptchaVO captchaVO = sysCaptchaService.generate();
+        return Result.ok(captchaVO);
+    }
+
 
     @PostMapping("login")
     @Operation(summary = "账号密码登录")

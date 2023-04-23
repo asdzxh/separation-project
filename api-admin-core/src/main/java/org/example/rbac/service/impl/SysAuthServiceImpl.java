@@ -3,6 +3,7 @@ package org.example.rbac.service.impl;
 import lombok.AllArgsConstructor;
 import org.example.common.exception.ServerException;
 import org.example.rbac.service.SysAuthService;
+import org.example.rbac.service.SysCaptchaService;
 import org.example.rbac.vo.SysAccountLoginVO;
 import org.example.rbac.vo.SysTokenVO;
 import org.example.security.cache.TokenStoreCache;
@@ -25,10 +26,16 @@ import org.springframework.stereotype.Service;
 public class SysAuthServiceImpl implements SysAuthService {
     private final TokenStoreCache tokenStoreCache;
     private final AuthenticationManager authenticationManager;
+    private final SysCaptchaService sysCaptchaService;
 
     @Override
     public SysTokenVO loginByAccount(SysAccountLoginVO login) {
+        // 如果不需要验证码，可以在这里去掉
+        boolean flag = sysCaptchaService.validate(login.getKey(),login.getCaptcha());
         Authentication authentication;
+        if (!flag){
+            throw new ServerException("验证码错误");
+        }
         try {
             // 用户认证
             authentication = authenticationManager.authenticate(
