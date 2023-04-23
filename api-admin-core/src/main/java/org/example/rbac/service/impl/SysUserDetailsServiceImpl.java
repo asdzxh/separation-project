@@ -3,6 +3,7 @@ import lombok.AllArgsConstructor;
 import org.example.rbac.convert.SysUserConvert;
 import org.example.rbac.entity.SysUserEntity;
 import org.example.rbac.enums.UserStatusEnum;
+import org.example.rbac.service.SysMenuService;
 import org.example.rbac.service.SysUserDetailsService;
 import org.example.security.user.UserDetail;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,6 +21,7 @@ import java.util.Set;
 @Service
 @AllArgsConstructor
 public class SysUserDetailsServiceImpl implements SysUserDetailsService {
+    private final SysMenuService sysMenuService;
 
     @Override
     public UserDetails getUserDetails(SysUserEntity userEntity) {
@@ -32,7 +34,7 @@ public class SysUserDetailsServiceImpl implements SysUserDetailsService {
         }
 
         // 用户权限列表
-        Set<String> authoritySet = new HashSet<>();
+        Set<String> authoritySet = sysMenuService.getUserAuthority(userDetail);
         userDetail.setAuthoritySet(authoritySet);
 
         return userDetail;
