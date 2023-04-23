@@ -13,5 +13,7 @@ import org.example.rbac.entity.SysUserEntity;
  */
 @Mapper
 public interface SysUserDao extends BaseDao<SysUserEntity> {
-
+    default SysUserEntity getByUsername(String username){
+        return this.selectOne(new QueryWrapper<SysUserEntity>().eq("username", username));
+    }
 }
