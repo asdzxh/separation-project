@@ -12,15 +12,17 @@
     <description>服务启动模块</description>
 
     <dependencies>
+
+
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>api-base</artifactId>
+            <artifactId>api-admin-core</artifactId>
             <version>${revision}</version>
         </dependency>
 
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>api-admin-core</artifactId>
+            <artifactId>api-admin-biz</artifactId>
             <version>${revision}</version>
         </dependency>
 
