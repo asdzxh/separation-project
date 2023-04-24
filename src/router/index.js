@@ -8,17 +8,26 @@ const routes = [
   {
     path: '/',
     name: 'index',
-    component: Index
+    component: Index,
+    meta: {
+      title: '仪表盘'
+    }
   },
   {
     path: '/login',
     name: 'login',
-    component: Login
+    component: Login,
+    meta: {
+      title: '登录页'
+    }
   },
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: NotFound
+    component: NotFound,
+    meta: {
+      title: '404未找到'
+    }
   }
 ]
 
@@ -46,6 +55,10 @@ router.beforeEach(async (to, from, next) => {
   if (token) {
     await getStoreInfo()
   }
+
+  //设置页面标题
+  let title = '后台系统-' + to.meta.title ? to.meta.title : ''
+  document.title = title
 
   next()
 })

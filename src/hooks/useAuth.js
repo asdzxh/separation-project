@@ -67,6 +67,7 @@ export function useLogout() {
     showModal('是否要退出登录？').then(() => {
       storeLogout().then(() => {
         router.push('/login')
+        location.reload()
       })
     })
   }
