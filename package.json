@@ -8,9 +8,10 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "prepare":"husky install"
+    "prepare": "husky install"
   },
   "dependencies": {
+    "element-plus": "^2.3.4",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
