@@ -28,5 +28,7 @@ module.exports = {
     //no-console在变量已定义未使用的情况下不报错
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "vue/multi-word-component-names":'off',//组件名不需要多个单词
+    'no-undef': 'off',//忽略未定义的报错
   },
 };
