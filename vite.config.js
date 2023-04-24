@@ -24,12 +24,13 @@ export default defineConfig({
         'pinia',
         {
           'vue-router': ['onBeforeRouteLeave'],
-          '@/utils/tool':['toast','showModal'],
-          '@/utils/storage':['getToken','setToken','removeToken'],
-          '@/api/auth':['login','logout','getCaptcha'],
+          '@/utils/tool': ['toast', 'showModal'],
+          '@/utils/storage': ['getToken', 'setToken', 'removeToken'],
+          '@/api/auth': ['login', 'logout', 'getCaptcha'],
           '@/api/admin': ['getInfo', 'rePassword'],
           '@/stores': ['useAdminStore'],
-          '@/hooks/useAuth': ['useAccountLogin', 'useMobileLogin', 'useLogout']
+          '@/hooks/useAuth': ['useAccountLogin', 'useMobileLogin', 'useLogout'],
+          '@/hooks/useAdmin': ['usePassword']
         }
       ],
       // 指定文件夹位置， 加 /** 可遍历子目录
@@ -64,6 +65,5 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 3000, // 端口号
     open: true // 是否自动打开浏览器
-  },
-
+  }
 })
