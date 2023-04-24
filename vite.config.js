@@ -26,7 +26,9 @@ export default defineConfig({
           'vue-router': ['onBeforeRouteLeave'],
           '@/utils/tool':['toast','showModal'],
           '@/utils/storage':['getToken','setToken','removeToken'],
-          '@/api/auth':['login','logout','getCaptcha']
+          '@/api/auth':['login','logout','getCaptcha'],
+          '@/api/admin': ['getInfo', 'rePassword'],
+          '@/stores': ['useAdminStore']
         }
       ],
       // 指定文件夹位置， 加 /** 可遍历子目录
