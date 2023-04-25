@@ -5,25 +5,9 @@ export function useBreadCrumbs() {
   const route = useRoute()
 
   const activeTab = ref(route.path)
-  const tabList = reactive([
+  const tabList = ref([
     {
       title: '仪表盘',
-      path: '/'
-    },
-    {
-      title: '用户管理',
-      path: '/'
-    },
-    {
-      title: '菜单管理',
-      path: '/'
-    },
-    {
-      title: '商品管理',
-      path: '/'
-    },
-    {
-      title: '订单管理',
       path: '/'
     }
   ])
