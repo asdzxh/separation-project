@@ -25,12 +25,20 @@ export default defineConfig({
         {
           'vue-router': ['onBeforeRouteLeave'],
           '@/utils/tool': ['toast', 'showModal', 'showFullLoading', 'hideFullLoading'],
-          '@/utils/storage': ['getToken', 'setToken', 'removeToken'],
+          '@/utils/storage': [
+            'getToken',
+            'setToken',
+            'removeToken',
+            'getTabList',
+            'setTabList',
+            'removeTabList'
+          ],
           '@/api/auth': ['login', 'logout', 'getCaptcha'],
           '@/api/admin': ['getInfo', 'rePassword'],
           '@/stores': ['useAdminStore'],
           '@/hooks/useAuth': ['useAccountLogin', 'useMobileLogin', 'useLogout'],
-          '@/hooks/useAdmin': ['usePassword']
+          '@/hooks/useAdmin': ['usePassword'],
+          '@/hoos/useBreadCrumbs': ['useBreadCrumbs']
         }
       ],
       // 指定文件夹位置， 加 /** 可遍历子目录
