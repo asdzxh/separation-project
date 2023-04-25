@@ -40,7 +40,8 @@ export default defineConfig({
           '@/hooks/useAuth': ['useAccountLogin', 'useMobileLogin', 'useLogout'],
           '@/hooks/useAdmin': ['usePassword'],
           '@/hoos/useBreadCrumbs': ['useBreadCrumbs'],
-          '@/hoos/useNotice': ['useNotice']
+          '@/hoos/useNotice': ['useNotice'],
+          '@/hoos/useCrud': ['useInitTable']
         }
       ],
       // 指定文件夹位置， 加 /** 可遍历子目录
