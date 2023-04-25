@@ -24,7 +24,7 @@ export default defineConfig({
         'pinia',
         {
           'vue-router': ['onBeforeRouteLeave'],
-          '@/utils/tool': ['toast', 'showModal'],
+          '@/utils/tool': ['toast', 'showModal', 'showFullLoading', 'hideFullLoading'],
           '@/utils/storage': ['getToken', 'setToken', 'removeToken'],
           '@/api/auth': ['login', 'logout', 'getCaptcha'],
           '@/api/admin': ['getInfo', 'rePassword'],
