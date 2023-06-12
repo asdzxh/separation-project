@@ -35,6 +35,7 @@ export default defineConfig({
           ],
           '@/api/auth': ['login', 'logout', 'getCaptcha'],
           '@/api/admin': ['getInfo', 'rePassword'],
+          '@/api/index': ['getStatistics1', 'getStatistics2', 'getStatistics3'],
           '@/api/notice': ['getNoticePage', 'saveNotice', 'updateNotice', 'deleteNotice'],
           '@/stores': ['useAdminStore'],
           '@/hooks/useAuth': ['useAccountLogin', 'useMobileLogin', 'useLogout'],
